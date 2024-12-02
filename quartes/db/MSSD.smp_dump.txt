@@ -1,0 +1,13 @@
+
+State Machine - |MSSD|OnePulser:onepulser|ps
+Name ps.A ps.C ps.B 
+ps.A 0 0 0 
+ps.B 1 0 1 
+ps.C 1 1 0 
+
+State Machine - |MSSD|Controller:controller|ps
+Name ps.SHOW ps.DATANUM ps.GETPORT ps.IDLE 
+ps.IDLE 0 0 0 0 
+ps.GETPORT 0 0 1 1 
+ps.DATANUM 0 1 0 1 
+ps.SHOW 1 0 0 1 

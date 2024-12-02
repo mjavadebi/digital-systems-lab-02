@@ -1,0 +1,212 @@
+|MSSD
+clk => clk.IN3
+rst => rst.IN3
+serIn => serIn.IN2
+clkPB => clkPB.IN1
+p0 <= DataPath:datapath.port12
+p1 <= DataPath:datapath.port13
+p2 <= DataPath:datapath.port14
+p3 <= DataPath:datapath.port15
+done <= Controller:controller.port15
+seroutvalid <= Controller:controller.port14
+ssd[0] <= DataPath:datapath.port19
+ssd[1] <= DataPath:datapath.port19
+ssd[2] <= DataPath:datapath.port19
+ssd[3] <= DataPath:datapath.port19
+ssd[4] <= DataPath:datapath.port19
+ssd[5] <= DataPath:datapath.port19
+ssd[6] <= DataPath:datapath.port19
+
+
+|MSSD|DataPath:datapath
+clk => clk.IN5
+rst => rst.IN5
+clk_en => clk_en.IN5
+serIn => serIn.IN4
+clear => clear.IN5
+cnt1_en => cnt1_en.IN1
+cnt2_en => cnt2_en.IN1
+cntd_en => cntd_en.IN1
+ldcntd => ldcntd.IN1
+sh_en => sh_en.IN1
+shd_en => shd_en.IN1
+portNumOut[0] <= portNumOut[0].DB_MAX_OUTPUT_PORT_TYPE
+portNumOut[1] <= portNumOut[1].DB_MAX_OUTPUT_PORT_TYPE
+p0 <= Demux:demux.port2
+p1 <= Demux:demux.port3
+p2 <= Demux:demux.port4
+p3 <= Demux:demux.port5
+cod <= DataTransCnt:cntDataTrans.port7
+co1 <= PortCnt:cntPort.port5
+co2 <= DataNumCnt:cntDataNum.port5
+ssdOut[0] <= SSD:ssd.port1
+ssdOut[1] <= SSD:ssd.port1
+ssdOut[2] <= SSD:ssd.port1
+ssdOut[3] <= SSD:ssd.port1
+ssdOut[4] <= SSD:ssd.port1
+ssdOut[5] <= SSD:ssd.port1
+ssdOut[6] <= SSD:ssd.port1
+
+
+|MSSD|DataPath:datapath|PortNumShr:shrPort
+clk => port_num[0]~reg0.CLK
+clk => port_num[1]~reg0.CLK
+rst => port_num[0]~reg0.ACLR
+rst => port_num[1]~reg0.ACLR
+clk_en => always0.IN0
+enable => always0.IN1
+serIn => port_num.DATAB
+clear => port_num.OUTPUTSELECT
+clear => port_num.OUTPUTSELECT
+port_num[0] <= port_num[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+port_num[1] <= port_num[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MSSD|DataPath:datapath|Demux:demux
+data => p3.DATAB
+data => p2.DATAB
+data => p1.DATAB
+data => p0.DATAB
+select[0] => Decoder0.IN1
+select[1] => Decoder0.IN0
+p0 <= p0.DB_MAX_OUTPUT_PORT_TYPE
+p1 <= p1.DB_MAX_OUTPUT_PORT_TYPE
+p2 <= p2.DB_MAX_OUTPUT_PORT_TYPE
+p3 <= p3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MSSD|DataPath:datapath|PortCnt:cntPort
+clk => count[0].CLK
+clk => count[1].CLK
+rst => count[0].ACLR
+rst => count[1].ACLR
+clk_en => always0.IN1
+clk_en => always0.IN0
+enable => always0.IN1
+enable => always0.IN1
+clear => count.OUTPUTSELECT
+clear => count.OUTPUTSELECT
+cout <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MSSD|DataPath:datapath|DataNumCnt:cntDataNum
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+rst => count[0].ACLR
+rst => count[1].ACLR
+rst => count[2].ACLR
+clk_en => always0.IN1
+clk_en => always0.IN0
+enable => always0.IN1
+enable => always0.IN1
+clear => count.OUTPUTSELECT
+clear => count.OUTPUTSELECT
+clear => count.OUTPUTSELECT
+cout <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MSSD|DataPath:datapath|DataNumShr:shrDataNum
+clk => num_data[0]~reg0.CLK
+clk => num_data[1]~reg0.CLK
+clk => num_data[2]~reg0.CLK
+clk => num_data[3]~reg0.CLK
+rst => num_data[0]~reg0.ACLR
+rst => num_data[1]~reg0.ACLR
+rst => num_data[2]~reg0.ACLR
+rst => num_data[3]~reg0.ACLR
+clk_en => always0.IN0
+enable => always0.IN1
+serIn => num_data.DATAB
+clear => num_data.OUTPUTSELECT
+clear => num_data.OUTPUTSELECT
+clear => num_data.OUTPUTSELECT
+clear => num_data.OUTPUTSELECT
+num_data[0] <= num_data[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+num_data[1] <= num_data[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+num_data[2] <= num_data[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+num_data[3] <= num_data[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MSSD|DataPath:datapath|DataTransCnt:cntDataTrans
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+rst => count[0].PRESET
+rst => count[1].PRESET
+rst => count[2].PRESET
+rst => count[3].PRESET
+rst => count[4].PRESET
+clk_en => always0.IN0
+clk_en => always0.IN1
+clk_en => always0.IN0
+enable => always0.IN1
+enable => always0.IN1
+load => always0.IN1
+clear => count.OUTPUTSELECT
+clear => count.OUTPUTSELECT
+clear => count.OUTPUTSELECT
+clear => count.OUTPUTSELECT
+clear => count.OUTPUTSELECT
+num_data[0] => count.DATAB
+num_data[1] => count.DATAB
+num_data[2] => count.DATAB
+num_data[3] => count.DATAB
+cout <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+out[0] <= count[0].DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= count[1].DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= count[2].DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= count[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MSSD|DataPath:datapath|SSD:ssd
+dataTransCntOut[0] => Decoder0.IN3
+dataTransCntOut[1] => Decoder0.IN2
+dataTransCntOut[2] => Decoder0.IN1
+dataTransCntOut[3] => Decoder0.IN0
+ssdOut[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+ssdOut[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+ssdOut[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+ssdOut[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+ssdOut[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+ssdOut[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+ssdOut[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MSSD|Controller:controller
+clk => ps~1.DATAIN
+rst => ps~3.DATAIN
+clk_en => ps.OUTPUTSELECT
+clk_en => ps.OUTPUTSELECT
+clk_en => ps.OUTPUTSELECT
+clk_en => ps.OUTPUTSELECT
+co1 => Selector2.IN3
+co1 => Selector1.IN2
+co2 => Selector3.IN3
+co2 => Selector2.IN1
+cod => Selector0.IN2
+cod => Selector3.IN1
+serIn => Selector0.IN3
+serIn => Selector1.IN1
+clear <= clear.DB_MAX_OUTPUT_PORT_TYPE
+cnt1_en <= cnt1_en.DB_MAX_OUTPUT_PORT_TYPE
+cnt2_en <= shd_en.DB_MAX_OUTPUT_PORT_TYPE
+cntd_en <= seroutvalid.DB_MAX_OUTPUT_PORT_TYPE
+ldcntd <= shd_en.DB_MAX_OUTPUT_PORT_TYPE
+sh_en <= cnt1_en.DB_MAX_OUTPUT_PORT_TYPE
+shd_en <= shd_en.DB_MAX_OUTPUT_PORT_TYPE
+seroutvalid <= seroutvalid.DB_MAX_OUTPUT_PORT_TYPE
+done <= clear.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MSSD|OnePulser:onepulser
+clk => ps~1.DATAIN
+rst => ps~3.DATAIN
+lp => ns.B.DATAB
+lp => Selector1.IN2
+lp => Selector0.IN1
+sp <= sp.DB_MAX_OUTPUT_PORT_TYPE
+
+

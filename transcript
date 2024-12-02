@@ -1,0 +1,101 @@
+# Compile of controller.v was successful.
+# Compile of data_num_cnt.v was successful.
+# Compile of data_num_shr.v was successful.
+# Compile of data_trans_cnt.v was successful.
+# Compile of datapath.v was successful.
+# Compile of demux.v was successful.
+# Compile of mssd.v was successful.
+# Compile of one_pulser.v was successful.
+# Compile of port_cnt.v was successful.
+# Compile of port_num_shr.v was successful.
+# Compile of ssd.v was successful.
+# Compile of testbench.v was successful.
+# 12 compiles, 0 failed with no errors.
+vsim -gui work.TestBench
+# vsim -gui work.TestBench 
+# Start time: 13:09:30 on Dec 02,2024
+# Loading work.TestBench
+# Loading work.MSSD
+# Loading work.DataPath
+# Loading work.PortNumShr
+# Loading work.Demux
+# Loading work.PortCnt
+# Loading work.DataNumCnt
+# Loading work.DataNumShr
+# Loading work.DataTransCnt
+# Loading work.SSD
+# Loading work.Controller
+# Trace back: Error QStructure::sort: invalid command name ""
+#   <6:C:/mtitcl/vsim/qstructure.tc_:2478: ::QStructure::sort .main_pane.structure 2 ascending
+#   <5:eval:1: ::QStructure::structsort .main_pane.structure 2 ascending
+#   <4:eval:1: ::namespace inscope ::QStructure {structsort .main_pane.structure} 2 ascending
+#   >3:proc:26: ::.main_pane.structure.interior.cs.body.struct sort 2 ascending
+#   >2:proc:10: ::.main_pane.structure.interior.cs.body.struct _initializeSortColumn
+#   <1:eval:1: ::namespace inscope ::vsimwidgets::Hierarchy {::.main_pane.structure.interior.cs.body.struct _initializeSortColumn}
+add wave -position insertpoint  \
+sim:/TestBench/ssd \
+sim:/TestBench/seroutvalid \
+sim:/TestBench/serIn \
+sim:/TestBench/rst \
+sim:/TestBench/p3 \
+sim:/TestBench/p2 \
+sim:/TestBench/p1 \
+sim:/TestBench/p0 \
+sim:/TestBench/done \
+sim:/TestBench/clkPB \
+sim:/TestBench/clk
+run -all
+# ** Note: $stop    : C:/Users/user/Desktop/DLD-Lab/digital-systems-lab-02/testbench.v(30)
+#    Time: 600 ns  Iteration: 0  Instance: /TestBench
+# Break in Module TestBench at C:/Users/user/Desktop/DLD-Lab/digital-systems-lab-02/testbench.v line 30
+run
+run
+run
+run
+run
+run
+run
+add wave -position insertpoint  \
+sim:/TestBench/mssd/datapath/cntDataNum/count
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/user/Desktop/DLD-Lab/digital-systems-lab-02/testbench.v(30)
+#    Time: 600 ns  Iteration: 0  Instance: /TestBench
+# Break in Module TestBench at C:/Users/user/Desktop/DLD-Lab/digital-systems-lab-02/testbench.v line 30
+run
+run
+run
+run
+add wave -position insertpoint  \
+sim:/TestBench/mssd/datapath/cntDataTrans/out
+restart
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+run
+run
+run
+run
+run
+# ** Note: $stop    : C:/Users/user/Desktop/DLD-Lab/digital-systems-lab-02/testbench.v(30)
+#    Time: 600 ns  Iteration: 0  Instance: /TestBench
+# Break in Module TestBench at C:/Users/user/Desktop/DLD-Lab/digital-systems-lab-02/testbench.v line 30
+run
+run
+run
+add wave -position insertpoint  \
+sim:/TestBench/mssd/controller/ps \
+sim:/TestBench/mssd/controller/ns
+restart
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/user/Desktop/DLD-Lab/digital-systems-lab-02/testbench.v(30)
+#    Time: 600 ns  Iteration: 0  Instance: /TestBench
+# Break in Module TestBench at C:/Users/user/Desktop/DLD-Lab/digital-systems-lab-02/testbench.v line 30

@@ -1,0 +1,1189 @@
+TimeQuest Timing Analyzer report for MSSD
+Sun Nov 03 21:23:07 2024
+Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clk'
+ 12. Slow Model Hold: 'clk'
+ 13. Slow Model Minimum Pulse Width: 'clk'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Propagation Delay
+ 19. Minimum Propagation Delay
+ 20. Fast Model Setup Summary
+ 21. Fast Model Hold Summary
+ 22. Fast Model Recovery Summary
+ 23. Fast Model Removal Summary
+ 24. Fast Model Minimum Pulse Width Summary
+ 25. Fast Model Setup: 'clk'
+ 26. Fast Model Hold: 'clk'
+ 27. Fast Model Minimum Pulse Width: 'clk'
+ 28. Setup Times
+ 29. Hold Times
+ 30. Clock to Output Times
+ 31. Minimum Clock to Output Times
+ 32. Propagation Delay
+ 33. Minimum Propagation Delay
+ 34. Multicorner Timing Analysis Summary
+ 35. Setup Times
+ 36. Hold Times
+ 37. Clock to Output Times
+ 38. Minimum Clock to Output Times
+ 39. Progagation Delay
+ 40. Minimum Progagation Delay
+ 41. Setup Transfers
+ 42. Hold Transfers
+ 43. Report TCCS
+ 44. Report RSKM
+ 45. Unconstrained Paths
+ 46. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2012 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                     ;
++--------------------+--------------------------------------------------+
+; Quartus II Version ; Version 12.1 Build 177 11/07/2012 SJ Web Edition ;
+; Revision Name      ; MSSD                                             ;
+; Device Family      ; Cyclone II                                       ;
+; Device Name        ; EP2C20F484C7                                     ;
+; Timing Models      ; Final                                            ;
+; Delay Model        ; Combined                                         ;
+; Rise/Fall Delays   ; Unavailable                                      ;
++--------------------+--------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 351.12 MHz ; 351.12 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -1.848 ; -22.454       ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.445 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.631 ; -24.849               ;
++-------+--------+-----------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                                                                                    ;
++--------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                            ; To Node                                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.848 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.886      ;
+; -1.752 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.790      ;
+; -1.701 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.739      ;
+; -1.701 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.739      ;
+; -1.701 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.739      ;
+; -1.701 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.739      ;
+; -1.679 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.717      ;
+; -1.601 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.639      ;
+; -1.457 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|PortNumShr:shrPort|port_num[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 2.495      ;
+; -1.457 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|PortNumShr:shrPort|port_num[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 2.495      ;
+; -1.406 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 2.444      ;
+; -1.406 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 2.444      ;
+; -1.406 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataNumShr:shrDataNum|num_data[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 2.444      ;
+; -1.406 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataNumShr:shrDataNum|num_data[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 2.444      ;
+; -1.406 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataNumShr:shrDataNum|num_data[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 2.444      ;
+; -1.373 ; Controller:controller|ps.GETPORT                     ; DataPath:datapath|PortNumShr:shrPort|port_num[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 2.411      ;
+; -1.373 ; Controller:controller|ps.GETPORT                     ; DataPath:datapath|PortNumShr:shrPort|port_num[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 2.411      ;
+; -1.366 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.404      ;
+; -1.366 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.404      ;
+; -1.366 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.404      ;
+; -1.366 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.404      ;
+; -1.365 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.403      ;
+; -1.353 ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.391      ;
+; -1.353 ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.391      ;
+; -1.353 ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.391      ;
+; -1.353 ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.391      ;
+; -1.306 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.344      ;
+; -1.282 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.320      ;
+; -1.226 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.264      ;
+; -1.210 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.248      ;
+; -1.169 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; Controller:controller|ps.IDLE                        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.207      ;
+; -1.169 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.207      ;
+; -1.153 ; Controller:controller|ps.SHOW                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.191      ;
+; -1.153 ; Controller:controller|ps.SHOW                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.191      ;
+; -1.153 ; Controller:controller|ps.SHOW                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.191      ;
+; -1.153 ; Controller:controller|ps.SHOW                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.191      ;
+; -1.151 ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 2.189      ;
+; -1.151 ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 2.189      ;
+; -1.151 ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataNumShr:shrDataNum|num_data[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 2.189      ;
+; -1.151 ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataNumShr:shrDataNum|num_data[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 2.189      ;
+; -1.151 ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataNumShr:shrDataNum|num_data[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 2.189      ;
+; -1.137 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.175      ;
+; -1.132 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|PortNumShr:shrPort|port_num[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 2.170      ;
+; -1.132 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|PortNumShr:shrPort|port_num[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 2.170      ;
+; -1.130 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.168      ;
+; -1.008 ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.046      ;
+; -0.998 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 2.036      ;
+; -0.998 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 2.036      ;
+; -0.998 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataNumShr:shrDataNum|num_data[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 2.036      ;
+; -0.998 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataNumShr:shrDataNum|num_data[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 2.036      ;
+; -0.998 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataNumShr:shrDataNum|num_data[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 2.036      ;
+; -0.974 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; Controller:controller|ps.IDLE                        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.012      ;
+; -0.974 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.012      ;
+; -0.917 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.955      ;
+; -0.910 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; Controller:controller|ps.IDLE                        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.948      ;
+; -0.910 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.948      ;
+; -0.854 ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.892      ;
+; -0.814 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.852      ;
+; -0.769 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.807      ;
+; -0.768 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; Controller:controller|ps.IDLE                        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.806      ;
+; -0.707 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.745      ;
+; -0.705 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.743      ;
+; -0.701 ; Controller:controller|ps.DATANUM                     ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.739      ;
+; -0.685 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.723      ;
+; -0.683 ; Controller:controller|ps.SHOW                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.721      ;
+; -0.584 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; Controller:controller|ps.IDLE                        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.622      ;
+; -0.584 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.622      ;
+; -0.570 ; DataPath:datapath|PortCnt:cntPort|count[0]           ; Controller:controller|ps.DATANUM                     ; clk          ; clk         ; 1.000        ; 0.000      ; 1.608      ;
+; -0.535 ; Controller:controller|ps.IDLE                        ; Controller:controller|ps.IDLE                        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.573      ;
+; -0.527 ; OnePulser:onepulser|ps.B                             ; Controller:controller|ps.IDLE                        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.565      ;
+; -0.527 ; OnePulser:onepulser|ps.B                             ; Controller:controller|ps.GETPORT                     ; clk          ; clk         ; 1.000        ; 0.000      ; 1.565      ;
+; -0.527 ; OnePulser:onepulser|ps.B                             ; Controller:controller|ps.DATANUM                     ; clk          ; clk         ; 1.000        ; 0.000      ; 1.565      ;
+; -0.527 ; OnePulser:onepulser|ps.B                             ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.565      ;
+; -0.517 ; Controller:controller|ps.IDLE                        ; Controller:controller|ps.GETPORT                     ; clk          ; clk         ; 1.000        ; 0.000      ; 1.555      ;
+; -0.501 ; Controller:controller|ps.GETPORT                     ; Controller:controller|ps.DATANUM                     ; clk          ; clk         ; 1.000        ; 0.000      ; 1.539      ;
+; -0.459 ; DataPath:datapath|DataNumShr:shrDataNum|num_data[1]  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.497      ;
+; -0.431 ; DataPath:datapath|DataNumShr:shrDataNum|num_data[2]  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.469      ;
+; -0.424 ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.462      ;
+; -0.423 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|PortCnt:cntPort|count[0]           ; clk          ; clk         ; 1.000        ; 0.000      ; 1.461      ;
+; -0.311 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.349      ;
+; -0.280 ; DataPath:datapath|DataNumShr:shrDataNum|num_data[0]  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.318      ;
+; -0.272 ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ; Controller:controller|ps.DATANUM                     ; clk          ; clk         ; 1.000        ; 0.000      ; 1.310      ;
+; -0.257 ; DataPath:datapath|DataNumShr:shrDataNum|num_data[0]  ; DataPath:datapath|DataNumShr:shrDataNum|num_data[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.295      ;
+; -0.230 ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 1.268      ;
+; -0.226 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|PortCnt:cntPort|count[0]           ; clk          ; clk         ; 1.000        ; 0.000      ; 1.264      ;
+; -0.226 ; Controller:controller|ps.SHOW                        ; Controller:controller|ps.IDLE                        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.264      ;
+; -0.213 ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ; Controller:controller|ps.DATANUM                     ; clk          ; clk         ; 1.000        ; 0.000      ; 1.251      ;
+; -0.195 ; DataPath:datapath|DataNumShr:shrDataNum|num_data[1]  ; DataPath:datapath|DataNumShr:shrDataNum|num_data[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.233      ;
+; -0.110 ; Controller:controller|ps.GETPORT                     ; DataPath:datapath|PortCnt:cntPort|count[0]           ; clk          ; clk         ; 1.000        ; 0.000      ; 1.148      ;
+; -0.105 ; DataPath:datapath|PortCnt:cntPort|count[0]           ; Controller:controller|ps.GETPORT                     ; clk          ; clk         ; 1.000        ; 0.000      ; 1.143      ;
+; 0.106  ; DataPath:datapath|PortNumShr:shrPort|port_num[0]     ; DataPath:datapath|PortNumShr:shrPort|port_num[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 0.932      ;
+; 0.120  ; OnePulser:onepulser|ps.A                             ; OnePulser:onepulser|ps.B                             ; clk          ; clk         ; 1.000        ; 0.000      ; 0.918      ;
+; 0.121  ; OnePulser:onepulser|ps.B                             ; OnePulser:onepulser|ps.A                             ; clk          ; clk         ; 1.000        ; 0.000      ; 0.917      ;
+; 0.307  ; Controller:controller|ps.SHOW                        ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.731      ;
+; 0.307  ; Controller:controller|ps.DATANUM                     ; Controller:controller|ps.DATANUM                     ; clk          ; clk         ; 1.000        ; 0.000      ; 0.731      ;
+; 0.307  ; Controller:controller|ps.GETPORT                     ; Controller:controller|ps.GETPORT                     ; clk          ; clk         ; 1.000        ; 0.000      ; 0.731      ;
+; 0.307  ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 0.731      ;
+; 0.307  ; DataPath:datapath|PortCnt:cntPort|count[0]           ; DataPath:datapath|PortCnt:cntPort|count[0]           ; clk          ; clk         ; 1.000        ; 0.000      ; 0.731      ;
+; 0.307  ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 0.731      ;
++--------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                                                                                    ;
++-------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                            ; To Node                                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.445 ; Controller:controller|ps.GETPORT                     ; Controller:controller|ps.GETPORT                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; DataPath:datapath|PortCnt:cntPort|count[0]           ; DataPath:datapath|PortCnt:cntPort|count[0]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Controller:controller|ps.DATANUM                     ; Controller:controller|ps.DATANUM                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Controller:controller|ps.SHOW                        ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.631 ; OnePulser:onepulser|ps.B                             ; OnePulser:onepulser|ps.A                             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.917      ;
+; 0.632 ; OnePulser:onepulser|ps.A                             ; OnePulser:onepulser|ps.B                             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.918      ;
+; 0.646 ; DataPath:datapath|PortNumShr:shrPort|port_num[0]     ; DataPath:datapath|PortNumShr:shrPort|port_num[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.932      ;
+; 0.674 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataNumShr:shrDataNum|num_data[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.960      ;
+; 0.675 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataNumShr:shrDataNum|num_data[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.961      ;
+; 0.675 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.961      ;
+; 0.675 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.961      ;
+; 0.857 ; DataPath:datapath|PortCnt:cntPort|count[0]           ; Controller:controller|ps.GETPORT                     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.143      ;
+; 0.862 ; Controller:controller|ps.GETPORT                     ; DataPath:datapath|PortCnt:cntPort|count[0]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.148      ;
+; 0.947 ; DataPath:datapath|DataNumShr:shrDataNum|num_data[1]  ; DataPath:datapath|DataNumShr:shrDataNum|num_data[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.233      ;
+; 0.965 ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ; Controller:controller|ps.DATANUM                     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.251      ;
+; 0.978 ; Controller:controller|ps.SHOW                        ; Controller:controller|ps.IDLE                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.264      ;
+; 0.978 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|PortCnt:cntPort|count[0]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.264      ;
+; 0.982 ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.268      ;
+; 1.009 ; DataPath:datapath|DataNumShr:shrDataNum|num_data[0]  ; DataPath:datapath|DataNumShr:shrDataNum|num_data[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.295      ;
+; 1.024 ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ; Controller:controller|ps.DATANUM                     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.310      ;
+; 1.032 ; DataPath:datapath|DataNumShr:shrDataNum|num_data[0]  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.318      ;
+; 1.044 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|PortNumShr:shrPort|port_num[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.330      ;
+; 1.063 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.349      ;
+; 1.067 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.353      ;
+; 1.068 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.354      ;
+; 1.070 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.356      ;
+; 1.175 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|PortCnt:cntPort|count[0]           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.461      ;
+; 1.176 ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.462      ;
+; 1.183 ; DataPath:datapath|DataNumShr:shrDataNum|num_data[2]  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.469      ;
+; 1.211 ; DataPath:datapath|DataNumShr:shrDataNum|num_data[1]  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.497      ;
+; 1.253 ; Controller:controller|ps.GETPORT                     ; Controller:controller|ps.DATANUM                     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.539      ;
+; 1.269 ; Controller:controller|ps.IDLE                        ; Controller:controller|ps.GETPORT                     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.555      ;
+; 1.270 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.556      ;
+; 1.279 ; OnePulser:onepulser|ps.B                             ; Controller:controller|ps.IDLE                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.565      ;
+; 1.279 ; OnePulser:onepulser|ps.B                             ; Controller:controller|ps.GETPORT                     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.565      ;
+; 1.279 ; OnePulser:onepulser|ps.B                             ; Controller:controller|ps.DATANUM                     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.565      ;
+; 1.279 ; OnePulser:onepulser|ps.B                             ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.565      ;
+; 1.287 ; Controller:controller|ps.IDLE                        ; Controller:controller|ps.IDLE                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.573      ;
+; 1.322 ; DataPath:datapath|PortCnt:cntPort|count[0]           ; Controller:controller|ps.DATANUM                     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.608      ;
+; 1.336 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.622      ;
+; 1.336 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; Controller:controller|ps.IDLE                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.622      ;
+; 1.377 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|PortNumShr:shrPort|port_num[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.663      ;
+; 1.435 ; Controller:controller|ps.SHOW                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.721      ;
+; 1.437 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.723      ;
+; 1.441 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.727      ;
+; 1.453 ; Controller:controller|ps.DATANUM                     ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.739      ;
+; 1.457 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.743      ;
+; 1.459 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.745      ;
+; 1.518 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataNumShr:shrDataNum|num_data[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.804      ;
+; 1.520 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; Controller:controller|ps.IDLE                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.806      ;
+; 1.521 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.807      ;
+; 1.570 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.856      ;
+; 1.606 ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.892      ;
+; 1.662 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.948      ;
+; 1.662 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; Controller:controller|ps.IDLE                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.948      ;
+; 1.669 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.955      ;
+; 1.726 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.012      ;
+; 1.726 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; Controller:controller|ps.IDLE                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.012      ;
+; 1.750 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.036      ;
+; 1.750 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.036      ;
+; 1.750 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataNumShr:shrDataNum|num_data[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.036      ;
+; 1.750 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataNumShr:shrDataNum|num_data[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.036      ;
+; 1.750 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataNumShr:shrDataNum|num_data[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.036      ;
+; 1.760 ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.046      ;
+; 1.882 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.168      ;
+; 1.884 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|PortNumShr:shrPort|port_num[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.170      ;
+; 1.884 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|PortNumShr:shrPort|port_num[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.170      ;
+; 1.889 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.175      ;
+; 1.903 ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.189      ;
+; 1.903 ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.189      ;
+; 1.903 ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataNumShr:shrDataNum|num_data[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.189      ;
+; 1.903 ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataNumShr:shrDataNum|num_data[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.189      ;
+; 1.903 ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataNumShr:shrDataNum|num_data[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.189      ;
+; 1.905 ; Controller:controller|ps.SHOW                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.191      ;
+; 1.905 ; Controller:controller|ps.SHOW                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.191      ;
+; 1.905 ; Controller:controller|ps.SHOW                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.191      ;
+; 1.905 ; Controller:controller|ps.SHOW                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.191      ;
+; 1.921 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.207      ;
+; 1.921 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; Controller:controller|ps.IDLE                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.207      ;
+; 1.962 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.248      ;
+; 1.978 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.264      ;
+; 2.013 ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.299      ;
+; 2.022 ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.308      ;
+; 2.023 ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.309      ;
+; 2.023 ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.309      ;
+; 2.055 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.341      ;
+; 2.058 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.344      ;
+; 2.064 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.350      ;
+; 2.065 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.351      ;
+; 2.065 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.351      ;
+; 2.117 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.403      ;
+; 2.125 ; Controller:controller|ps.GETPORT                     ; DataPath:datapath|PortNumShr:shrPort|port_num[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.411      ;
+; 2.125 ; Controller:controller|ps.GETPORT                     ; DataPath:datapath|PortNumShr:shrPort|port_num[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.411      ;
+; 2.353 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.639      ;
+; 2.431 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.717      ;
+; 2.504 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.790      ;
+; 2.600 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.886      ;
++-------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                                                 ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                               ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------------+
+; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; clk   ; Rise       ; clk                                                  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Controller:controller|ps.DATANUM                     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Controller:controller|ps.DATANUM                     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Controller:controller|ps.GETPORT                     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Controller:controller|ps.GETPORT                     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Controller:controller|ps.IDLE                        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Controller:controller|ps.IDLE                        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Controller:controller|ps.SHOW                        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Controller:controller|ps.SHOW                        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; DataPath:datapath|DataNumShr:shrDataNum|num_data[0]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; DataPath:datapath|DataNumShr:shrDataNum|num_data[0]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; DataPath:datapath|DataNumShr:shrDataNum|num_data[1]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; DataPath:datapath|DataNumShr:shrDataNum|num_data[1]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; DataPath:datapath|DataNumShr:shrDataNum|num_data[2]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; DataPath:datapath|DataNumShr:shrDataNum|num_data[2]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; DataPath:datapath|PortCnt:cntPort|count[0]           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; DataPath:datapath|PortCnt:cntPort|count[0]           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; DataPath:datapath|PortNumShr:shrPort|port_num[0]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; DataPath:datapath|PortNumShr:shrPort|port_num[0]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; DataPath:datapath|PortNumShr:shrPort|port_num[1]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; DataPath:datapath|PortNumShr:shrPort|port_num[1]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; OnePulser:onepulser|ps.A                             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; OnePulser:onepulser|ps.A                             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; OnePulser:onepulser|ps.B                             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; OnePulser:onepulser|ps.B                             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|combout                                          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|combout                                          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|inclk[0]                                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|inclk[0]                                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|outclk                                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|outclk                                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; controller|ps.DATANUM|clk                            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; controller|ps.DATANUM|clk                            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; controller|ps.GETPORT|clk                            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; controller|ps.GETPORT|clk                            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; controller|ps.IDLE|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; controller|ps.IDLE|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; controller|ps.SHOW|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; controller|ps.SHOW|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; datapath|cntDataNum|count[0]|clk                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; datapath|cntDataNum|count[0]|clk                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; datapath|cntDataNum|count[1]|clk                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; datapath|cntDataNum|count[1]|clk                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; datapath|cntDataTrans|count[0]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; datapath|cntDataTrans|count[0]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; datapath|cntDataTrans|count[1]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; datapath|cntDataTrans|count[1]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; datapath|cntDataTrans|count[2]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; datapath|cntDataTrans|count[2]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; datapath|cntDataTrans|count[3]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; datapath|cntDataTrans|count[3]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; datapath|cntDataTrans|count[4]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; datapath|cntDataTrans|count[4]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; datapath|cntPort|count[0]|clk                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; datapath|cntPort|count[0]|clk                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; datapath|shrDataNum|num_data[0]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; datapath|shrDataNum|num_data[0]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; datapath|shrDataNum|num_data[1]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; datapath|shrDataNum|num_data[1]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; datapath|shrDataNum|num_data[2]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; datapath|shrDataNum|num_data[2]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; datapath|shrPort|port_num[0]|clk                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; datapath|shrPort|port_num[0]|clk                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; datapath|shrPort|port_num[1]|clk                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; datapath|shrPort|port_num[1]|clk                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; onepulser|ps.A|clk                                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; onepulser|ps.A|clk                                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; onepulser|ps.B|clk                                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; onepulser|ps.B|clk                                   ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; clkPB     ; clk        ; -0.265 ; -0.265 ; Rise       ; clk             ;
+; serIn     ; clk        ; 0.878  ; 0.878  ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; clkPB     ; clk        ; 0.559 ; 0.559 ; Rise       ; clk             ;
+; serIn     ; clk        ; 0.046 ; 0.046 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Clock to Output Times                                                     ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; done        ; clk        ; 6.825  ; 6.825  ; Rise       ; clk             ;
+; p0          ; clk        ; 7.650  ; 7.650  ; Rise       ; clk             ;
+; p1          ; clk        ; 7.608  ; 7.608  ; Rise       ; clk             ;
+; p2          ; clk        ; 7.669  ; 7.669  ; Rise       ; clk             ;
+; p3          ; clk        ; 8.047  ; 8.047  ; Rise       ; clk             ;
+; seroutvalid ; clk        ; 6.806  ; 6.806  ; Rise       ; clk             ;
+; ssd[*]      ; clk        ; 12.797 ; 12.797 ; Rise       ; clk             ;
+;  ssd[0]     ; clk        ; 12.407 ; 12.407 ; Rise       ; clk             ;
+;  ssd[1]     ; clk        ; 12.437 ; 12.437 ; Rise       ; clk             ;
+;  ssd[2]     ; clk        ; 12.656 ; 12.656 ; Rise       ; clk             ;
+;  ssd[3]     ; clk        ; 12.771 ; 12.771 ; Rise       ; clk             ;
+;  ssd[4]     ; clk        ; 12.797 ; 12.797 ; Rise       ; clk             ;
+;  ssd[5]     ; clk        ; 12.793 ; 12.793 ; Rise       ; clk             ;
+;  ssd[6]     ; clk        ; 12.793 ; 12.793 ; Rise       ; clk             ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                             ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; done        ; clk        ; 6.825  ; 6.825  ; Rise       ; clk             ;
+; p0          ; clk        ; 7.595  ; 7.595  ; Rise       ; clk             ;
+; p1          ; clk        ; 7.505  ; 7.505  ; Rise       ; clk             ;
+; p2          ; clk        ; 7.649  ; 7.649  ; Rise       ; clk             ;
+; p3          ; clk        ; 8.002  ; 8.002  ; Rise       ; clk             ;
+; seroutvalid ; clk        ; 6.806  ; 6.806  ; Rise       ; clk             ;
+; ssd[*]      ; clk        ; 10.517 ; 10.517 ; Rise       ; clk             ;
+;  ssd[0]     ; clk        ; 10.517 ; 10.517 ; Rise       ; clk             ;
+;  ssd[1]     ; clk        ; 10.545 ; 10.545 ; Rise       ; clk             ;
+;  ssd[2]     ; clk        ; 10.775 ; 10.775 ; Rise       ; clk             ;
+;  ssd[3]     ; clk        ; 10.891 ; 10.891 ; Rise       ; clk             ;
+;  ssd[4]     ; clk        ; 10.906 ; 10.906 ; Rise       ; clk             ;
+;  ssd[5]     ; clk        ; 10.910 ; 10.910 ; Rise       ; clk             ;
+;  ssd[6]     ; clk        ; 10.909 ; 10.909 ; Rise       ; clk             ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------+
+; Propagation Delay                                  ;
++------------+-------------+-------+----+----+-------+
+; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
++------------+-------------+-------+----+----+-------+
+; serIn      ; p0          ; 6.087 ;    ;    ; 6.087 ;
+; serIn      ; p1          ; 5.977 ;    ;    ; 5.977 ;
+; serIn      ; p2          ; 6.088 ;    ;    ; 6.088 ;
+; serIn      ; p3          ; 6.420 ;    ;    ; 6.420 ;
++------------+-------------+-------+----+----+-------+
+
+
++----------------------------------------------------+
+; Minimum Propagation Delay                          ;
++------------+-------------+-------+----+----+-------+
+; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
++------------+-------------+-------+----+----+-------+
+; serIn      ; p0          ; 6.087 ;    ;    ; 6.087 ;
+; serIn      ; p1          ; 5.977 ;    ;    ; 5.977 ;
+; serIn      ; p2          ; 6.088 ;    ;    ; 6.088 ;
+; serIn      ; p3          ; 6.420 ;    ;    ; 6.420 ;
++------------+-------------+-------+----+----+-------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -0.123 ; -0.667        ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.380 ; -20.380               ;
++-------+--------+-----------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                                                                                    ;
++--------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                            ; To Node                                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.123 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.155      ;
+; -0.123 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.155      ;
+; -0.123 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.155      ;
+; -0.123 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.155      ;
+; -0.058 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.090      ;
+; -0.026 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|PortNumShr:shrPort|port_num[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 1.058      ;
+; -0.026 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|PortNumShr:shrPort|port_num[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 1.058      ;
+; -0.015 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.047      ;
+; -0.013 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 1.045      ;
+; -0.013 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 1.045      ;
+; -0.013 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataNumShr:shrDataNum|num_data[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.045      ;
+; -0.013 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataNumShr:shrDataNum|num_data[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.045      ;
+; -0.013 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataNumShr:shrDataNum|num_data[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.045      ;
+; -0.008 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.040      ;
+; -0.008 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.040      ;
+; -0.008 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.040      ;
+; -0.008 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.040      ;
+; -0.003 ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.035      ;
+; -0.003 ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.035      ;
+; -0.003 ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.035      ;
+; -0.003 ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.035      ;
+; 0.010  ; Controller:controller|ps.GETPORT                     ; DataPath:datapath|PortNumShr:shrPort|port_num[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 1.022      ;
+; 0.010  ; Controller:controller|ps.GETPORT                     ; DataPath:datapath|PortNumShr:shrPort|port_num[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 1.022      ;
+; 0.015  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.017      ;
+; 0.049  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.983      ;
+; 0.067  ; Controller:controller|ps.SHOW                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.965      ;
+; 0.067  ; Controller:controller|ps.SHOW                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.965      ;
+; 0.067  ; Controller:controller|ps.SHOW                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.965      ;
+; 0.067  ; Controller:controller|ps.SHOW                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.965      ;
+; 0.081  ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|PortNumShr:shrPort|port_num[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 0.951      ;
+; 0.081  ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|PortNumShr:shrPort|port_num[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 0.951      ;
+; 0.084  ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 0.948      ;
+; 0.084  ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 0.948      ;
+; 0.084  ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataNumShr:shrDataNum|num_data[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 0.948      ;
+; 0.084  ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataNumShr:shrDataNum|num_data[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 0.948      ;
+; 0.084  ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataNumShr:shrDataNum|num_data[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 0.948      ;
+; 0.122  ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 0.910      ;
+; 0.122  ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 0.910      ;
+; 0.122  ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataNumShr:shrDataNum|num_data[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 0.910      ;
+; 0.122  ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataNumShr:shrDataNum|num_data[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 0.910      ;
+; 0.122  ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataNumShr:shrDataNum|num_data[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 0.910      ;
+; 0.131  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.901      ;
+; 0.137  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.895      ;
+; 0.138  ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.894      ;
+; 0.171  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.861      ;
+; 0.174  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; Controller:controller|ps.IDLE                        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.858      ;
+; 0.174  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.858      ;
+; 0.180  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.852      ;
+; 0.210  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.822      ;
+; 0.214  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.818      ;
+; 0.225  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; Controller:controller|ps.IDLE                        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.807      ;
+; 0.225  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.807      ;
+; 0.231  ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.801      ;
+; 0.262  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; Controller:controller|ps.IDLE                        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.770      ;
+; 0.262  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.770      ;
+; 0.270  ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.762      ;
+; 0.277  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.755      ;
+; 0.287  ; OnePulser:onepulser|ps.B                             ; Controller:controller|ps.IDLE                        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.745      ;
+; 0.287  ; OnePulser:onepulser|ps.B                             ; Controller:controller|ps.GETPORT                     ; clk          ; clk         ; 1.000        ; 0.000      ; 0.745      ;
+; 0.287  ; OnePulser:onepulser|ps.B                             ; Controller:controller|ps.DATANUM                     ; clk          ; clk         ; 1.000        ; 0.000      ; 0.745      ;
+; 0.287  ; OnePulser:onepulser|ps.B                             ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.745      ;
+; 0.306  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.726      ;
+; 0.326  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; Controller:controller|ps.IDLE                        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.706      ;
+; 0.327  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.705      ;
+; 0.339  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.693      ;
+; 0.344  ; Controller:controller|ps.SHOW                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.688      ;
+; 0.347  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.685      ;
+; 0.347  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.685      ;
+; 0.351  ; Controller:controller|ps.DATANUM                     ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.681      ;
+; 0.354  ; Controller:controller|ps.IDLE                        ; DataPath:datapath|PortCnt:cntPort|count[0]           ; clk          ; clk         ; 1.000        ; 0.000      ; 0.678      ;
+; 0.386  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; Controller:controller|ps.IDLE                        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.646      ;
+; 0.386  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.646      ;
+; 0.391  ; Controller:controller|ps.GETPORT                     ; Controller:controller|ps.DATANUM                     ; clk          ; clk         ; 1.000        ; 0.000      ; 0.641      ;
+; 0.393  ; DataPath:datapath|PortCnt:cntPort|count[0]           ; Controller:controller|ps.DATANUM                     ; clk          ; clk         ; 1.000        ; 0.000      ; 0.639      ;
+; 0.405  ; Controller:controller|ps.IDLE                        ; Controller:controller|ps.IDLE                        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.627      ;
+; 0.416  ; Controller:controller|ps.IDLE                        ; Controller:controller|ps.GETPORT                     ; clk          ; clk         ; 1.000        ; 0.000      ; 0.616      ;
+; 0.429  ; DataPath:datapath|DataNumShr:shrDataNum|num_data[1]  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.603      ;
+; 0.433  ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.599      ;
+; 0.441  ; DataPath:datapath|DataNumShr:shrDataNum|num_data[2]  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.591      ;
+; 0.448  ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.584      ;
+; 0.473  ; DataPath:datapath|DataNumShr:shrDataNum|num_data[0]  ; DataPath:datapath|DataNumShr:shrDataNum|num_data[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 0.559      ;
+; 0.488  ; DataPath:datapath|DataNumShr:shrDataNum|num_data[0]  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.544      ;
+; 0.501  ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ; Controller:controller|ps.DATANUM                     ; clk          ; clk         ; 1.000        ; 0.000      ; 0.531      ;
+; 0.505  ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 0.527      ;
+; 0.514  ; DataPath:datapath|DataNumShr:shrDataNum|num_data[1]  ; DataPath:datapath|DataNumShr:shrDataNum|num_data[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 0.518      ;
+; 0.518  ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|PortCnt:cntPort|count[0]           ; clk          ; clk         ; 1.000        ; 0.000      ; 0.514      ;
+; 0.518  ; Controller:controller|ps.SHOW                        ; Controller:controller|ps.IDLE                        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.514      ;
+; 0.520  ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ; Controller:controller|ps.DATANUM                     ; clk          ; clk         ; 1.000        ; 0.000      ; 0.512      ;
+; 0.554  ; DataPath:datapath|PortCnt:cntPort|count[0]           ; Controller:controller|ps.GETPORT                     ; clk          ; clk         ; 1.000        ; 0.000      ; 0.478      ;
+; 0.554  ; Controller:controller|ps.GETPORT                     ; DataPath:datapath|PortCnt:cntPort|count[0]           ; clk          ; clk         ; 1.000        ; 0.000      ; 0.478      ;
+; 0.624  ; DataPath:datapath|PortNumShr:shrPort|port_num[0]     ; DataPath:datapath|PortNumShr:shrPort|port_num[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 0.408      ;
+; 0.631  ; OnePulser:onepulser|ps.A                             ; OnePulser:onepulser|ps.B                             ; clk          ; clk         ; 1.000        ; 0.000      ; 0.401      ;
+; 0.636  ; OnePulser:onepulser|ps.B                             ; OnePulser:onepulser|ps.A                             ; clk          ; clk         ; 1.000        ; 0.000      ; 0.396      ;
+; 0.665  ; Controller:controller|ps.SHOW                        ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665  ; Controller:controller|ps.DATANUM                     ; Controller:controller|ps.DATANUM                     ; clk          ; clk         ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665  ; Controller:controller|ps.GETPORT                     ; Controller:controller|ps.GETPORT                     ; clk          ; clk         ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665  ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665  ; DataPath:datapath|PortCnt:cntPort|count[0]           ; DataPath:datapath|PortCnt:cntPort|count[0]           ; clk          ; clk         ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665  ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 0.367      ;
++--------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                                                                                    ;
++-------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                            ; To Node                                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; Controller:controller|ps.GETPORT                     ; Controller:controller|ps.GETPORT                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; DataPath:datapath|PortCnt:cntPort|count[0]           ; DataPath:datapath|PortCnt:cntPort|count[0]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Controller:controller|ps.DATANUM                     ; Controller:controller|ps.DATANUM                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Controller:controller|ps.SHOW                        ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.244 ; OnePulser:onepulser|ps.B                             ; OnePulser:onepulser|ps.A                             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.396      ;
+; 0.249 ; OnePulser:onepulser|ps.A                             ; OnePulser:onepulser|ps.B                             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.401      ;
+; 0.256 ; DataPath:datapath|PortNumShr:shrPort|port_num[0]     ; DataPath:datapath|PortNumShr:shrPort|port_num[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.408      ;
+; 0.267 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataNumShr:shrDataNum|num_data[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.419      ;
+; 0.268 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataNumShr:shrDataNum|num_data[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.420      ;
+; 0.269 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.421      ;
+; 0.269 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.421      ;
+; 0.326 ; DataPath:datapath|PortCnt:cntPort|count[0]           ; Controller:controller|ps.GETPORT                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.478      ;
+; 0.326 ; Controller:controller|ps.GETPORT                     ; DataPath:datapath|PortCnt:cntPort|count[0]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.478      ;
+; 0.360 ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ; Controller:controller|ps.DATANUM                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.512      ;
+; 0.362 ; Controller:controller|ps.SHOW                        ; Controller:controller|ps.IDLE                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.514      ;
+; 0.362 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|PortCnt:cntPort|count[0]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.514      ;
+; 0.366 ; DataPath:datapath|DataNumShr:shrDataNum|num_data[1]  ; DataPath:datapath|DataNumShr:shrDataNum|num_data[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.518      ;
+; 0.375 ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.527      ;
+; 0.379 ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ; Controller:controller|ps.DATANUM                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.531      ;
+; 0.392 ; DataPath:datapath|DataNumShr:shrDataNum|num_data[0]  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.544      ;
+; 0.407 ; DataPath:datapath|DataNumShr:shrDataNum|num_data[0]  ; DataPath:datapath|DataNumShr:shrDataNum|num_data[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.559      ;
+; 0.422 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|PortNumShr:shrPort|port_num[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.574      ;
+; 0.432 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.584      ;
+; 0.433 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.585      ;
+; 0.434 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.586      ;
+; 0.436 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.588      ;
+; 0.439 ; DataPath:datapath|DataNumShr:shrDataNum|num_data[2]  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.591      ;
+; 0.447 ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.599      ;
+; 0.451 ; DataPath:datapath|DataNumShr:shrDataNum|num_data[1]  ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.603      ;
+; 0.464 ; Controller:controller|ps.IDLE                        ; Controller:controller|ps.GETPORT                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.616      ;
+; 0.475 ; Controller:controller|ps.IDLE                        ; Controller:controller|ps.IDLE                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.627      ;
+; 0.486 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.638      ;
+; 0.487 ; DataPath:datapath|PortCnt:cntPort|count[0]           ; Controller:controller|ps.DATANUM                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.639      ;
+; 0.489 ; Controller:controller|ps.GETPORT                     ; Controller:controller|ps.DATANUM                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.641      ;
+; 0.494 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.646      ;
+; 0.494 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; Controller:controller|ps.IDLE                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.646      ;
+; 0.511 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|PortNumShr:shrPort|port_num[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.663      ;
+; 0.526 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|PortCnt:cntPort|count[0]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.678      ;
+; 0.529 ; Controller:controller|ps.DATANUM                     ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.681      ;
+; 0.531 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.683      ;
+; 0.533 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.685      ;
+; 0.533 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.685      ;
+; 0.536 ; Controller:controller|ps.SHOW                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.688      ;
+; 0.541 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.693      ;
+; 0.553 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.705      ;
+; 0.554 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; Controller:controller|ps.IDLE                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.706      ;
+; 0.581 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.733      ;
+; 0.593 ; OnePulser:onepulser|ps.B                             ; Controller:controller|ps.IDLE                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.745      ;
+; 0.593 ; OnePulser:onepulser|ps.B                             ; Controller:controller|ps.GETPORT                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.745      ;
+; 0.593 ; OnePulser:onepulser|ps.B                             ; Controller:controller|ps.DATANUM                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.745      ;
+; 0.593 ; OnePulser:onepulser|ps.B                             ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.745      ;
+; 0.598 ; Controller:controller|ps.IDLE                        ; DataPath:datapath|DataNumShr:shrDataNum|num_data[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.750      ;
+; 0.603 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.755      ;
+; 0.610 ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.762      ;
+; 0.618 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.770      ;
+; 0.618 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; Controller:controller|ps.IDLE                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.770      ;
+; 0.649 ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.801      ;
+; 0.655 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.807      ;
+; 0.655 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; Controller:controller|ps.IDLE                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.807      ;
+; 0.666 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.818      ;
+; 0.670 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.822      ;
+; 0.700 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.852      ;
+; 0.706 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; Controller:controller|ps.SHOW                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.858      ;
+; 0.706 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; Controller:controller|ps.IDLE                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.858      ;
+; 0.709 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.861      ;
+; 0.743 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.895      ;
+; 0.749 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.901      ;
+; 0.756 ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.908      ;
+; 0.758 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.910      ;
+; 0.758 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.910      ;
+; 0.758 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataNumShr:shrDataNum|num_data[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.910      ;
+; 0.758 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataNumShr:shrDataNum|num_data[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.910      ;
+; 0.758 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataNumShr:shrDataNum|num_data[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.910      ;
+; 0.760 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.912      ;
+; 0.762 ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.914      ;
+; 0.763 ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.915      ;
+; 0.764 ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.916      ;
+; 0.766 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.918      ;
+; 0.767 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.919      ;
+; 0.768 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.920      ;
+; 0.796 ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.948      ;
+; 0.796 ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.948      ;
+; 0.796 ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataNumShr:shrDataNum|num_data[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.948      ;
+; 0.796 ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataNumShr:shrDataNum|num_data[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.948      ;
+; 0.796 ; Controller:controller|ps.DATANUM                     ; DataPath:datapath|DataNumShr:shrDataNum|num_data[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.948      ;
+; 0.799 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|PortNumShr:shrPort|port_num[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.951      ;
+; 0.799 ; OnePulser:onepulser|ps.B                             ; DataPath:datapath|PortNumShr:shrPort|port_num[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.951      ;
+; 0.813 ; Controller:controller|ps.SHOW                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.965      ;
+; 0.813 ; Controller:controller|ps.SHOW                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.965      ;
+; 0.813 ; Controller:controller|ps.SHOW                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.965      ;
+; 0.813 ; Controller:controller|ps.SHOW                        ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.965      ;
+; 0.831 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.983      ;
+; 0.865 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.017      ;
+; 0.870 ; Controller:controller|ps.GETPORT                     ; DataPath:datapath|PortNumShr:shrPort|port_num[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.022      ;
+; 0.870 ; Controller:controller|ps.GETPORT                     ; DataPath:datapath|PortNumShr:shrPort|port_num[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.022      ;
+; 0.895 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.047      ;
+; 0.938 ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.090      ;
++-------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                                                 ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                               ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Controller:controller|ps.DATANUM                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Controller:controller|ps.DATANUM                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Controller:controller|ps.GETPORT                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Controller:controller|ps.GETPORT                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Controller:controller|ps.IDLE                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Controller:controller|ps.IDLE                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Controller:controller|ps.SHOW                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Controller:controller|ps.SHOW                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; DataPath:datapath|DataNumCnt:cntDataNum|count[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; DataPath:datapath|DataNumCnt:cntDataNum|count[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; DataPath:datapath|DataNumShr:shrDataNum|num_data[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; DataPath:datapath|DataNumShr:shrDataNum|num_data[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; DataPath:datapath|DataNumShr:shrDataNum|num_data[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; DataPath:datapath|DataNumShr:shrDataNum|num_data[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; DataPath:datapath|DataNumShr:shrDataNum|num_data[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; DataPath:datapath|DataNumShr:shrDataNum|num_data[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; DataPath:datapath|DataTransCnt:cntDataTrans|count[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; DataPath:datapath|DataTransCnt:cntDataTrans|count[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; DataPath:datapath|DataTransCnt:cntDataTrans|count[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; DataPath:datapath|DataTransCnt:cntDataTrans|count[3] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; DataPath:datapath|DataTransCnt:cntDataTrans|count[4] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; DataPath:datapath|PortCnt:cntPort|count[0]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; DataPath:datapath|PortCnt:cntPort|count[0]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; DataPath:datapath|PortNumShr:shrPort|port_num[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; DataPath:datapath|PortNumShr:shrPort|port_num[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; DataPath:datapath|PortNumShr:shrPort|port_num[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; DataPath:datapath|PortNumShr:shrPort|port_num[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; OnePulser:onepulser|ps.A                             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; OnePulser:onepulser|ps.A                             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; OnePulser:onepulser|ps.B                             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; OnePulser:onepulser|ps.B                             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|combout                                          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|combout                                          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|inclk[0]                                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|inclk[0]                                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|outclk                                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|outclk                                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; controller|ps.DATANUM|clk                            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; controller|ps.DATANUM|clk                            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; controller|ps.GETPORT|clk                            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; controller|ps.GETPORT|clk                            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; controller|ps.IDLE|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; controller|ps.IDLE|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; controller|ps.SHOW|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; controller|ps.SHOW|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; datapath|cntDataNum|count[0]|clk                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; datapath|cntDataNum|count[0]|clk                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; datapath|cntDataNum|count[1]|clk                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; datapath|cntDataNum|count[1]|clk                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; datapath|cntDataTrans|count[0]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; datapath|cntDataTrans|count[0]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; datapath|cntDataTrans|count[1]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; datapath|cntDataTrans|count[1]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; datapath|cntDataTrans|count[2]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; datapath|cntDataTrans|count[2]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; datapath|cntDataTrans|count[3]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; datapath|cntDataTrans|count[3]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; datapath|cntDataTrans|count[4]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; datapath|cntDataTrans|count[4]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; datapath|cntPort|count[0]|clk                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; datapath|cntPort|count[0]|clk                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; datapath|shrDataNum|num_data[0]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; datapath|shrDataNum|num_data[0]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; datapath|shrDataNum|num_data[1]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; datapath|shrDataNum|num_data[1]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; datapath|shrDataNum|num_data[2]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; datapath|shrDataNum|num_data[2]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; datapath|shrPort|port_num[0]|clk                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; datapath|shrPort|port_num[0]|clk                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; datapath|shrPort|port_num[1]|clk                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; datapath|shrPort|port_num[1]|clk                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; onepulser|ps.A|clk                                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; onepulser|ps.A|clk                                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; onepulser|ps.B|clk                                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; onepulser|ps.B|clk                                   ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; clkPB     ; clk        ; -0.610 ; -0.610 ; Rise       ; clk             ;
+; serIn     ; clk        ; -0.160 ; -0.160 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; clkPB     ; clk        ; 0.760 ; 0.760 ; Rise       ; clk             ;
+; serIn     ; clk        ; 0.583 ; 0.583 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; done        ; clk        ; 3.696 ; 3.696 ; Rise       ; clk             ;
+; p0          ; clk        ; 4.019 ; 4.019 ; Rise       ; clk             ;
+; p1          ; clk        ; 3.969 ; 3.969 ; Rise       ; clk             ;
+; p2          ; clk        ; 4.017 ; 4.017 ; Rise       ; clk             ;
+; p3          ; clk        ; 4.160 ; 4.160 ; Rise       ; clk             ;
+; seroutvalid ; clk        ; 3.686 ; 3.686 ; Rise       ; clk             ;
+; ssd[*]      ; clk        ; 6.174 ; 6.174 ; Rise       ; clk             ;
+;  ssd[0]     ; clk        ; 5.996 ; 5.996 ; Rise       ; clk             ;
+;  ssd[1]     ; clk        ; 6.027 ; 6.027 ; Rise       ; clk             ;
+;  ssd[2]     ; clk        ; 6.099 ; 6.099 ; Rise       ; clk             ;
+;  ssd[3]     ; clk        ; 6.146 ; 6.146 ; Rise       ; clk             ;
+;  ssd[4]     ; clk        ; 6.174 ; 6.174 ; Rise       ; clk             ;
+;  ssd[5]     ; clk        ; 6.168 ; 6.168 ; Rise       ; clk             ;
+;  ssd[6]     ; clk        ; 6.170 ; 6.170 ; Rise       ; clk             ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; done        ; clk        ; 3.696 ; 3.696 ; Rise       ; clk             ;
+; p0          ; clk        ; 4.003 ; 4.003 ; Rise       ; clk             ;
+; p1          ; clk        ; 3.957 ; 3.957 ; Rise       ; clk             ;
+; p2          ; clk        ; 4.014 ; 4.014 ; Rise       ; clk             ;
+; p3          ; clk        ; 4.142 ; 4.142 ; Rise       ; clk             ;
+; seroutvalid ; clk        ; 3.686 ; 3.686 ; Rise       ; clk             ;
+; ssd[*]      ; clk        ; 5.179 ; 5.179 ; Rise       ; clk             ;
+;  ssd[0]     ; clk        ; 5.179 ; 5.179 ; Rise       ; clk             ;
+;  ssd[1]     ; clk        ; 5.207 ; 5.207 ; Rise       ; clk             ;
+;  ssd[2]     ; clk        ; 5.288 ; 5.288 ; Rise       ; clk             ;
+;  ssd[3]     ; clk        ; 5.338 ; 5.338 ; Rise       ; clk             ;
+;  ssd[4]     ; clk        ; 5.354 ; 5.354 ; Rise       ; clk             ;
+;  ssd[5]     ; clk        ; 5.358 ; 5.358 ; Rise       ; clk             ;
+;  ssd[6]     ; clk        ; 5.356 ; 5.356 ; Rise       ; clk             ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------+
+; Propagation Delay                                  ;
++------------+-------------+-------+----+----+-------+
+; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
++------------+-------------+-------+----+----+-------+
+; serIn      ; p0          ; 2.848 ;    ;    ; 2.848 ;
+; serIn      ; p1          ; 2.788 ;    ;    ; 2.788 ;
+; serIn      ; p2          ; 2.847 ;    ;    ; 2.847 ;
+; serIn      ; p3          ; 2.982 ;    ;    ; 2.982 ;
++------------+-------------+-------+----+----+-------+
+
+
++----------------------------------------------------+
+; Minimum Propagation Delay                          ;
++------------+-------------+-------+----+----+-------+
+; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
++------------+-------------+-------+----+----+-------+
+; serIn      ; p0          ; 2.848 ;    ;    ; 2.848 ;
+; serIn      ; p1          ; 2.788 ;    ;    ; 2.788 ;
+; serIn      ; p2          ; 2.847 ;    ;    ; 2.847 ;
+; serIn      ; p3          ; 2.982 ;    ;    ; 2.982 ;
++------------+-------------+-------+----+----+-------+
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -1.848  ; 0.215 ; N/A      ; N/A     ; -1.631              ;
+;  clk             ; -1.848  ; 0.215 ; N/A      ; N/A     ; -1.631              ;
+; Design-wide TNS  ; -22.454 ; 0.0   ; 0.0      ; 0.0     ; -24.849             ;
+;  clk             ; -22.454 ; 0.000 ; N/A      ; N/A     ; -24.849             ;
++------------------+---------+-------+----------+---------+---------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; clkPB     ; clk        ; -0.265 ; -0.265 ; Rise       ; clk             ;
+; serIn     ; clk        ; 0.878  ; 0.878  ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; clkPB     ; clk        ; 0.760 ; 0.760 ; Rise       ; clk             ;
+; serIn     ; clk        ; 0.583 ; 0.583 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Clock to Output Times                                                     ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; done        ; clk        ; 6.825  ; 6.825  ; Rise       ; clk             ;
+; p0          ; clk        ; 7.650  ; 7.650  ; Rise       ; clk             ;
+; p1          ; clk        ; 7.608  ; 7.608  ; Rise       ; clk             ;
+; p2          ; clk        ; 7.669  ; 7.669  ; Rise       ; clk             ;
+; p3          ; clk        ; 8.047  ; 8.047  ; Rise       ; clk             ;
+; seroutvalid ; clk        ; 6.806  ; 6.806  ; Rise       ; clk             ;
+; ssd[*]      ; clk        ; 12.797 ; 12.797 ; Rise       ; clk             ;
+;  ssd[0]     ; clk        ; 12.407 ; 12.407 ; Rise       ; clk             ;
+;  ssd[1]     ; clk        ; 12.437 ; 12.437 ; Rise       ; clk             ;
+;  ssd[2]     ; clk        ; 12.656 ; 12.656 ; Rise       ; clk             ;
+;  ssd[3]     ; clk        ; 12.771 ; 12.771 ; Rise       ; clk             ;
+;  ssd[4]     ; clk        ; 12.797 ; 12.797 ; Rise       ; clk             ;
+;  ssd[5]     ; clk        ; 12.793 ; 12.793 ; Rise       ; clk             ;
+;  ssd[6]     ; clk        ; 12.793 ; 12.793 ; Rise       ; clk             ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; done        ; clk        ; 3.696 ; 3.696 ; Rise       ; clk             ;
+; p0          ; clk        ; 4.003 ; 4.003 ; Rise       ; clk             ;
+; p1          ; clk        ; 3.957 ; 3.957 ; Rise       ; clk             ;
+; p2          ; clk        ; 4.014 ; 4.014 ; Rise       ; clk             ;
+; p3          ; clk        ; 4.142 ; 4.142 ; Rise       ; clk             ;
+; seroutvalid ; clk        ; 3.686 ; 3.686 ; Rise       ; clk             ;
+; ssd[*]      ; clk        ; 5.179 ; 5.179 ; Rise       ; clk             ;
+;  ssd[0]     ; clk        ; 5.179 ; 5.179 ; Rise       ; clk             ;
+;  ssd[1]     ; clk        ; 5.207 ; 5.207 ; Rise       ; clk             ;
+;  ssd[2]     ; clk        ; 5.288 ; 5.288 ; Rise       ; clk             ;
+;  ssd[3]     ; clk        ; 5.338 ; 5.338 ; Rise       ; clk             ;
+;  ssd[4]     ; clk        ; 5.354 ; 5.354 ; Rise       ; clk             ;
+;  ssd[5]     ; clk        ; 5.358 ; 5.358 ; Rise       ; clk             ;
+;  ssd[6]     ; clk        ; 5.356 ; 5.356 ; Rise       ; clk             ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------+
+; Progagation Delay                                  ;
++------------+-------------+-------+----+----+-------+
+; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
++------------+-------------+-------+----+----+-------+
+; serIn      ; p0          ; 6.087 ;    ;    ; 6.087 ;
+; serIn      ; p1          ; 5.977 ;    ;    ; 5.977 ;
+; serIn      ; p2          ; 6.088 ;    ;    ; 6.088 ;
+; serIn      ; p3          ; 6.420 ;    ;    ; 6.420 ;
++------------+-------------+-------+----+----+-------+
+
+
++----------------------------------------------------+
+; Minimum Progagation Delay                          ;
++------------+-------------+-------+----+----+-------+
+; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
++------------+-------------+-------+----+----+-------+
+; serIn      ; p0          ; 2.848 ;    ;    ; 2.848 ;
+; serIn      ; p1          ; 2.788 ;    ;    ; 2.788 ;
+; serIn      ; p2          ; 2.847 ;    ;    ; 2.847 ;
+; serIn      ; p3          ; 2.982 ;    ;    ; 2.982 ;
++------------+-------------+-------+----+----+-------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 120      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 120      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 3     ; 3    ;
+; Unconstrained Input Port Paths  ; 30    ; 30   ;
+; Unconstrained Output Ports      ; 13    ; 13   ;
+; Unconstrained Output Port Paths ; 42    ; 42   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 12.1 Build 177 11/07/2012 SJ Web Edition
+    Info: Processing started: Sun Nov 03 21:23:06 2024
+Info: Command: quartus_sta MSSD -c MSSD
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'MSSD.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -1.848
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.848       -22.454 clk 
+Info (332146): Worst-case hold slack is 0.445
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.445         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.631
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.631       -24.849 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.123
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.123        -0.667 clk 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -20.380 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 385 megabytes
+    Info: Processing ended: Sun Nov 03 21:23:07 2024
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
